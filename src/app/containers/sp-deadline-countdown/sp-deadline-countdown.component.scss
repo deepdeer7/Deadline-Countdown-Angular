@@ -1,0 +1,43 @@
+$gutter: 8px;
+
+$border-radius: $gutter * 3;
+$alert-color: #ff2a5d;
+$opacity-background: 0.4;
+$color-brand: #9165cf;
+$color-brand-secondary: #f5559e;
+
+.error {
+  color: $alert-color;
+  font-weight: 700;
+  background-color: rgba($color-brand, $opacity-background);
+  display: flex;
+  padding: $gutter;
+  justify-content: center;
+}
+
+.loading-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($alert-color, $opacity-background);
+  padding: $gutter * 2;
+  border-radius: $border-radius;
+  font-size: 1.2rem;
+
+  .icon {
+    margin-right: $gutter * 3;
+  }
+}
+
+.time-left-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $color-brand;
+
+  .seconds {
+    color: $color-brand-secondary;
+  }
+}

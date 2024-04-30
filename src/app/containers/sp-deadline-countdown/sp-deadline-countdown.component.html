@@ -1,0 +1,37 @@
+@if (isError) {
+<p class="error">Sorry, error happened. Please, reload the page or try later</p>
+} @else { @if (loadingService.loading()) {
+<div class="loading-alert">
+  <svg
+    class="icon"
+    width="24px"
+    height="24px"
+    viewBox="0 0 32 32"
+    x="0px"
+    xmlns="http://www.w3.org/2000/svg"
+    y="0px"
+  >
+    <path
+      d="M29.3,26.8l-7.7-14.1c-0.3-0.5-0.4-0.9-0.4-1.3V7.8c0-0.7,0.3-1.5,0.8-2L26,2.5c0.4-0.4,0.6-1,0.4-1.5
+          c-0.2-0.5-0.7-0.9-1.2-0.9h-18c-0.5,0-1,0.3-1.2,0.8C5.7,1.5,5.8,2.1,6.2,2.5l3.6,3.3c0.5,0.4,0.8,1.2,0.8,1.9v3.7
+          c0,0.4-0.1,0.8-0.3,1.3L2.7,26.8c-0.3,0.5-0.5,1-0.5,1.6c-0.1,0.9,0.2,1.7,0.8,2.3c0.6,0.7,1.5,1.1,2.4,1.1h21.2
+          c0.6,0,1.2-0.2,1.7-0.5C29.8,30.3,30.3,28.3,29.3,26.8z M26.9,29.1c-0.1,0-0.2,0.1-0.3,0.1H5.4c-0.2,0-0.3-0.1-0.5-0.2
+          c-0.1-0.1-0.1-0.2-0.1-0.4c0,0,0-0.1,0-0.1c0-0.1,0-0.2,0.1-0.3c0,0,0-0.1,0.1-0.1l7.7-14.2c0.3-0.6,0.6-1.4,0.6-2.5V7.7
+          c0-1.5-0.7-2.9-1.7-3.9l-1.1-1h11l-1.2,1c-1.1,1.1-1.7,2.5-1.7,3.9v3.6c0,1.1,0.4,1.9,0.7,2.5L27,28.1c0,0,0,0.1,0.1,0.1
+          C27.3,28.5,27.2,28.9,26.9,29.1z M13,18.3l-4.2,8.2h14.4L19,18.3H13z"
+    />
+  </svg>
+  <p>
+    Do you know that Washington is the only state named after a president,
+    George Washington?
+  </p>
+</div>
+}
+
+<div class="time-left-title">
+  @if (!loadingService.loading()) {
+  <p>Seconds left to deadline:&nbsp;</p>
+  }
+  <p class="seconds">{{ secondsLeft$ | async }}</p>
+</div>
+}
